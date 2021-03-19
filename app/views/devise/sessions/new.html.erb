@@ -1,0 +1,24 @@
+<div class="box">
+  <div class="box-inner">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <h1>ログイン</h1>
+      <div class="box-username">
+        <%= f.label :username, "ユーザー名" %><br />
+        <%= f.text_field :username, autofocus: true %>
+      </div>
+
+      <div class="box-password">
+        <%= f.label :password, "パスワード" %><br />
+        <%= f.password_field :password, autocomplete: "current-password" %>
+      </div>
+
+      <div class="box-signup">
+        <%= f.submit "ログイン" %>
+      </div>
+    <% end %>
+
+    <div class="new">
+      <%= link_to "新規登録", new_user_registration_path %>
+    </div>
+  </div>
+</div>

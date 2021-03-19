@@ -1,0 +1,18 @@
+<div class="notifications">
+    <h1>お知らせ一覧</h1>
+</div>
+
+<% notifications = @notifications.where.not(visitor_id: current_user.id) %>
+    <% if notifications.exists? %>
+        <%= render notifications %>
+    <% else %>
+        <div class="not-notification">
+            <h1>通知はありません</h1>
+        </div>
+    <% end %>
+
+<div class="back-mypage">
+    <%= link_to(user_path(current_user)) do %>
+        <button class="btn btn--orange btn--cubic btn--shadow">戻る</button>
+    <% end %>
+</div>

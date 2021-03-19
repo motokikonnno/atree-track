@@ -1,0 +1,18 @@
+<div class="box-post-edit">
+    <div class="box-inner">
+        <h1>変更</h1>
+        <%= render 'form', post: @post %>
+    </div>
+</div>
+
+<div class="show">
+    <%= link_to(@post) do %>
+        <p class="btn btn--orange btn-primate">詳細</p>
+    <% end %>
+</div>
+
+<div class="back">
+    <%= link_to(user_path(current_user.id)) do %>
+        <p class="btn btn--orange btn-primary">戻る</p>
+    <% end %>
+</div>

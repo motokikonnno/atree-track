@@ -1,0 +1,24 @@
+<%= form_with(model: post, local: true) do |form| %>
+  <div class="btn-group btn-group-vertical" data-toggle="buttons">
+    <div class="btn active">
+      <% @tags.each do |tag| %>
+        <%= form.label tag.name %><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i>
+        <%= radio_button_tag "post[tag_ids][]", tag.id, @post.tags.include?(tag) %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="box-video">
+    <span><%= form.label :video, "動画ファイルを選択" %></span>
+    <%= form.file_field :video, style: "display: none;" %>
+  </div>
+
+  <div class="content">
+    <%= form.label :content, "コメント" %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class="box-signup">
+    <%= form.submit "投稿" %>
+  </div>
+<% end %>

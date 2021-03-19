@@ -1,0 +1,16 @@
+<div class="explain">
+    <h1 class="title">Atreeとは</h1>
+    <p class="convinient">陸上競技に特化したQ&Aサイトです</p>
+    <div class="last">
+        <p class="convinient">足が速くなりたい、伸び悩んでいる、そんなあなたに最適なサービスです</p>
+    </div>
+    <% if user_signed_in? %>
+        <div class="home-hoge">
+        </div>
+    <% else %>
+        <%= link_to(new_user_registration_path) do %>
+            <button class="btn btn--orange btn--cubic btn--shadow">新規登録</button>
+        <% end %>
+        <h2>1分でできます！</h2>
+    <% end %>
+</div>

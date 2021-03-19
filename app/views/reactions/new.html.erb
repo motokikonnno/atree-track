@@ -1,0 +1,14 @@
+<div class="box-comment">
+    <div class="box-inner">
+        <h1>コメント</h1>
+        <%= render 'form', reaction: @reaction %>
+    </div>
+</div>
+
+<div class="back-show">
+    <%= link_to(post_path(@reaction.answer.post)) do %>
+        <button class="btn btn--orange btn--cubic btn--shadow">戻る</button>
+    <% end %>
+</div>
+
+

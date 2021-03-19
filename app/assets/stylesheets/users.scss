@@ -1,0 +1,103 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+    table{
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+    }
+  
+    table tr{
+        border-bottom: solid 1px #eee;
+        cursor: pointer;
+    }
+  
+    table th,table td{
+        text-align: center;
+        padding: 15px 0;
+        width: 25%;
+    }
+    
+    table td.icon{
+        background-size: 35px;
+        background-position: left 5px center;
+        background-repeat: no-repeat;
+        padding-left: 30px;
+    }
+
+    .favorite {
+        margin-top: 150px;
+    }
+
+    .not {
+        margin-top: 50px;
+        margin-left: 50px;
+        font-size: medium;
+    }
+
+    .serch {
+        margin-left: 50px;
+    }
+
+    h1.btn--orange {
+        color: #fff;
+        background-color: #eb6100;
+        border-bottom: 5px solid #b84c00;
+        font-size: 25px;
+        margin-bottom: 100px;
+        width: 100%;
+    }
+
+    h1.btn--orange:hover {
+        margin-top: 3px;
+        color: #fff;
+        background: #f56500;
+        border-bottom: 2px solid #b84c00;
+    }
+
+    h1.btn--shadow {
+        -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+        box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+    }
+
+    button.btn--orange {
+        color: #fff;
+        background-color: #eb6100;
+        border-bottom: 5px solid #b84c00;
+        font-size: 20px;
+    }
+
+    button.btn--orange:hover {
+        margin-top: 3px;
+        color: #fff;
+        background: #f56500;
+        border-bottom: 2px solid #b84c00;
+    }
+
+    button.btn--shadow {
+        -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+        box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+    }
+
+    .option {
+        text-align: center;
+        margin-bottom: 0;
+        margin-top: 20px;
+    }
+
+    .search-favorite {
+        margin-left: 40px;
+        margin-bottom: 100px;
+    }
+
+    .exist {
+        margin-top: 120px;
+        margin-left: 50px;
+        margin-bottom: 120px;
+    }
+
+    .user-name {
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }

@@ -1,0 +1,79 @@
+<div class="post-show">
+  <table class="row">
+    <tr><th>種目</th>
+      <% @post.tags.each do |tag| %>
+        <td><%= tag.name %></td></tr>
+      <% end %>
+
+    <tr><th>動画</th>
+      <%= link_to @post.video_url.to_s do %>
+        <td><%= video_tag(@post.video.to_s, :controls => true, :size => 25*15) %></td></tr>
+      <% end %>
+
+    <tr><th>コメント</th>
+    <td><%= @post.content %></td></tr>
+
+      <tr><th>お気に入り</th>
+        <p id="favorite_<%= @post.id %>">
+          <td><%= render partial: 'favorites/favorite', locals: {post: @post} %></tr></td>
+        </p>
+  </table>
+</div>
+
+<% if @post.answers.any? %>
+  <div class="answer">
+    <h1>みんなの回答</h1>
+  </div>
+  <p class="border">---------------------------------------------------------------------</p>
+  <% @post.answers.each do |answer| %>
+    <div class="ba">
+      <button class="best"><%= 'ベストアンサー' if @post.best_answer_id == answer.id %></button>
+    </div>
+    <p class="answer-name"><%= answer.answer_name %>さんの回答</p>
+    <p class="answer-content"><%= answer.content %><p>
+    <p class="answer-time"><%= time_ago_in_words(answer.created_at) %>前</p>
+    <div class="reaction">
+       <%= link_to(new_answer_reaction_path(answer.id)) do %>
+      <button class="btn btn--orange btn--cubic btn--shadow">反応する</button>
+      <% end %>
+    <% if @post.user_id == current_user.id %>
+      <%= form_with(model: @post, local: true, data: {confirm: "#{answer.answer_name}さんの回答をベストアンサーにします"}) do |f| %>
+        <%= f.hidden_field :best_answer_id, value: answer.id %>
+        <%= f.submit 'ベストアンサーに選ぶ', disabled: @post.best_answer_id.present? %>
+      <% end %>
+    </div>
+    <% end %>
+
+    <p class="border">---------------------------------------------------------------------</p>
+    <% answer.reactions.each do |reaction| %>
+      <p class="answer-name"><%= reaction.user.username %>さんの反応</p>
+      <p class="answer-content"><%= reaction.body %></p>
+      <p class="answer-time"><%= time_ago_in_words(reaction.created_at) %>前</p>
+    <div class="reaction">
+         <%= link_to(new_answer_reaction_path(answer.id)) do %>
+          <button class="btn btn--orange btn--cubic btn--shadow">反応する</button>
+    </div>
+          <% end %>
+      <p class="border">---------------------------------------------------------------------</p>
+      <% end %>
+    <% end %>
+<% else %>
+  <div class="not-answer">
+    <h1>回答がありません</h1>
+  </div>
+<% end %>
+
+<% if @post.user.id != current_user.id %>
+  <h1 class="true">回答</h1>
+  <%= form_with model: [@post, @answer], local: true do |f| %>
+    <%= f.hidden_field :post_id, value: @post.id %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.hidden_field :answer_name, value: current_user.username %>
+    <%= f.text_area :content, class: "answers-content" %>
+    <div class="answer-btn">
+      <%= f.submit "回答", class: "btn btn--orange btn--cubic btn--shadow" %>
+    </div>
+  <% end %>
+<% end %>
+
+

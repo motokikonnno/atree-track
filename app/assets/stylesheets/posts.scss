@@ -1,0 +1,357 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+    span {
+        display: block;
+        color: #fff;
+        font-weight: bold;
+        font-size: 18px;
+        font-family: “游ゴシック”, “Yu Gothic”;
+        background: #ee7800;
+        padding: 8px 0;
+        border-radius: 16px;
+        max-width: 240px;
+        text-align: center;
+        transition: .3s;
+        cursor:pointer;
+    }
+
+    span:hover {
+    background: #000;
+    }
+
+    .box-video input[type="file"] {
+        position: relative;
+        margin: 8px 0 0 -14px;
+    }
+
+    .box-video input[type="file"]::before {
+        content: “添付ファイル：”;
+        position: absolute;
+        background: #fff;
+        width: 110px;
+        height: 26px;
+        line-height: 1.8;
+        text-align: right;
+    }
+
+    .btn input[type="checkbox"] ~ i.fa.fa-square-o{
+        color: #c8c8c8;    display: inline;
+    }
+
+    .btn input[type="checkbox"] ~ i.fa.fa-check-square-o{
+        display: none;
+    }
+    .btn input[type="checkbox"]:checked ~ i.fa.fa-square-o{
+        display: none;
+    }
+    .btn input[type="checkbox"]:checked ~ i.fa.fa-check-square-o{
+        color: #7AA3CC;    display: inline;
+    }
+
+    .btn input[type="checkbox"]:hover {
+        color: #7AA3CC;
+    }
+
+    div[data-toggle="buttons"] .btn.active{
+        color: #7AA3CC;
+    }
+
+    div[data-toggle="buttons"] .btn {
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 2em;
+        text-align: left;
+        white-space: nowrap;
+        vertical-align: top;
+        cursor: pointer;
+        background-color: none;
+        border: 0px solid 
+        #c8c8c8;
+        border-radius: 3px;
+        color: #c8c8c8;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+    }
+        
+    div[data-toggle="buttons"] .btn:hover {
+        color: #7AA3CC;
+    }
+
+    div[data-toggle="buttons"] .btn:active, div[data-toggle="buttons"] .btn.active {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .content {
+        margin-bottom: 20px;
+        margin-top: 15px;
+    }
+
+    .option {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 150px;
+        display: block;
+    }
+
+    *,
+    *:before,
+    *:after {
+        -webkit-box-sizing: inherit;
+        box-sizing: inherit;
+    }
+        
+    html {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        font-size: 62.5%;
+    }
+        
+    .btn,
+    p.btn {
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 1.5;
+        position: relative;
+        display: inline-block;
+        padding: 1rem 4rem;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+        text-align: center;
+        vertical-align: middle;
+        text-decoration: none;
+        letter-spacing: 0.1em;
+        color: #fff;
+        border-radius: 0.5rem;
+    }
+        
+    .btn--orange,
+    p.btn--orange {
+        color: #fff;
+        background-color: #eb6100;
+    }
+        
+    .btn--orange:hover,
+    p.btn--orange:hover {
+        color: #fff;
+        background-color: #f56500;
+    }
+        
+    p.btn--radius {
+        border-radius: 100%;
+    }
+    
+    .back {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .show {
+        text-align: center;
+        margin-bottom: 4px;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+    }
+  
+    table tr {
+        border-bottom: solid 1px #eee;
+        cursor: pointer;
+    }
+  
+    table th,table td {
+        text-align: center;
+        padding: 15px 0;
+        width: 25%;
+    }
+  
+    table td.icon {
+        background-size: 35px;
+        background-position: left 5px center;
+        background-repeat: no-repeat;
+        padding-left: 30px;
+    }
+
+    #sbox4{
+        height:50px;
+        padding:0 10px; 
+        position:absolute; 
+        left:0;
+        top:0; 
+        border-radius:25px;
+        outline:0;
+        background:#eee;
+        }
+
+    #sbtn4{
+        height:50px;
+        width:50px;	
+        position:absolute; 
+        left:250px; 
+        top:0;
+        background:#7fbfff;
+        color:#fff;
+        border:none;
+        border-radius:0 25px 25px 0;
+    }
+
+    #sbtn4 .fa-search{
+        font-size:20px;	
+        position:absolute;
+        top:30%;
+        left:30%;	
+    }
+
+    #sbtn4:hover{
+        color:#888;
+    }
+        
+    dl.searchbox{
+        width: 350px;
+        position:relative;
+        background-color:#fff;
+        border:1px solid #aaa;
+        border-radius:6px;
+        margin: 30px auto;
+    }
+
+    dl.searchbox dt{
+        padding:3px;
+    }
+
+    dl.searchbox dt input{
+        width:70%;
+        height:30px;
+        line-height:30px;
+        background:none;
+        border:none;
+    }
+
+    dl.searchbox dd{
+        position:absolute;
+        top:1px;
+        right:1px;
+        width:30%;
+    }
+
+    .search-btn{
+        display:block;
+        background:#eb6100;
+        width:100%;
+        height:36px;
+        line-height:36px;
+        border:none;
+        border-radius: 0 6px 6px 0;
+        color:#FFF;
+    }
+          
+    .search-btn:hover {
+        background:#f56500;
+    }
+
+    .answers {
+        text-align: center;
+        margin-bottom: 130px;
+    }
+
+    .posts {
+        margin-top: 55px;
+    }
+
+    .hoge {
+        margin-bottom: 320px;
+    }
+
+    p {
+        margin: 15px 0;
+    }
+
+    .row tr {
+        border-left: solid 1px #eee;
+        border-right: solid 1px #eee;
+        border-top: solid 1px #eee;
+    }
+
+    .row th {
+        border-right: solid 1px #eee;
+    }
+
+    .post-show {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+    }
+
+    .answer {
+        margin-left: 740px;
+        margin-top: 60px;
+    }
+
+    .answer-name {
+        margin-left: 740px;
+        font-size: 20px;
+    }
+
+    .answer-content {
+        margin-left: 740px;
+        font-size: 15px;
+    }
+
+    .answer-time {
+        margin-left: 1100px;
+    }
+
+    .border {
+        margin-left: 740px;
+    }
+
+    .reaction {
+        margin-left: 740px;
+    }
+
+    .best {
+        background-color: #eb6100;
+        color: #fff;
+    }
+
+    .ba {
+        margin-left: 740px;
+    }
+
+    .true {
+        margin-top: 180px;
+        margin-left: 740px;
+    }
+
+    .answers-content {
+        width: 400px;
+        height: 300px;
+        margin-left: 740px;
+    }
+
+    .answer-btn {
+        text-align: center;
+        margin-bottom: 80px;
+    }
+
+    .not-answer {
+        text-align: center;
+        margin-top: 180px;
+    }
+

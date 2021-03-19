@@ -1,0 +1,239 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
+
+  div.scroll-list {
+    padding: 0;
+  }  
+
+  nav.pagination {
+    display: none;
+  }
+
+  header {
+    padding: 30px 4%;
+    display: flex;
+    width: 100%;
+    background-color: #ffd700;
+    position: relative;
+    top: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .home {
+    margin: 0; padding: 0;
+    font-size: 20px;
+    list-style: none;
+    color: white;
+  }
+
+  .menu-item {
+    list-style: none;
+    display: inline;
+    margin: 0 0 0 15px;
+    font-size: 14px;
+    text-decoration: none;
+    color: white;
+  }
+
+  .menu-group {
+    list-style: none;
+    margin: 0;
+    display: flex;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-flow: column;
+    min-height: 100%;
+  }
+
+  nav {
+    margin: 0 0 0 auto;
+  }
+
+  * {
+    box-sizing: border-box;
+ }
+
+ footer {
+    width: 100%;
+    background-color: #ffd700;
+    text-align: center;
+    padding: 30px 0;
+    bottom: 0;
+    color: white;
+  }
+
+  * {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+  }
+  .box {
+    width: 350px;
+    height: 450px;
+    margin: 160px auto 200px;
+    border-radius: 4px;
+    border: 1px #ddd solid;
+  }
+
+  .box-edit {
+    width: 350px;
+    height: 580px;
+    margin: 160px auto 20px;
+    border-radius: 4px;
+    border: 1px #ddd solid;
+  }
+
+  .box-post {
+    width: 350px;
+    height: 500px;
+    margin: 160px auto 200px;
+    border-radius: 4px;
+    border: 1px #ddd solid;
+  }
+
+  .box-post-edit {
+    width: 400px;
+    height: 500px;
+    margin: 160px auto 15px;
+    border-radius: 4px;
+    border: 1px #ddd solid;
+  }
+  
+  .box-inner {
+    padding: 20px 26px;
+  }
+  
+  h1 {
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    padding-bottom: 4px;
+    color: #111111;
+  }
+
+  .box-username {
+    margin-bottom: 13px;
+  }
+  
+  .box-email {
+    margin-bottom: 13px;
+  }
+  
+  .box-password {
+    margin-bottom: 22px;
+  }
+  
+  .box-email label, .box-password label, .box-username label {
+    font-weight: 700;
+    font-size: 13px;
+    padding-left: 2px;
+    padding-bottom: 0;
+  }
+  
+  .box-email input[type="email"], .box-password input[type="password"], .box-username input[type="text"] {
+    border-style: none;
+    box-sizing: border-box;
+    width: 100%;
+    height: 31px;
+    border: 1px solid #a6a6a6;
+    box-shadow: 0 1px 0 rgba(0,0,0,.07) inset;
+    border-radius: 3px;
+    padding: 0 7px;
+  }
+  
+  .column-left {
+    float: left;
+  }
+  
+  .column-right {
+    float: right;
+  }
+  
+  .box-password a {
+    font-size: 13px;
+  }
+  
+  .box-signup {
+    margin-bottom: 26px;
+  }
+  
+  .box-signup input[type="submit"] {
+    border-style: none;
+    width: 100%;
+    height: 31px;
+    background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+    border-radius: 3px;
+    border: 1px #a88734 solid;
+  }
+  
+  .box-signup input[type="submit"]:hover {
+    cursor: pointer;
+    background: #f0c14b;
+  }
+  
+  .legal-text {
+    margin-top: 18px;
+    font-size: 12px;
+  }
+  
+  .remember {
+    font-size: 13px;
+    margin-top: 18px;
+    padding-left: 3px;
+  }
+  
+  .box-newusr p {
+    text-align: center;
+    font-size: 12px;
+    color: #767676;
+    margin-bottom: 14px;
+  }
+  
+  .box-newusr p span {
+    text-decoration: line-through;
+    text-decoration-color: #e7e7e7;
+  }
+  
+  .box-newusr a {
+    display: block;
+    width: 100%;
+    height: 31px;
+    font-size: 13px;
+    color: #111;
+    line-height: 31px;
+    text-align: center;
+    background: linear-gradient(to bottom,#f7f8fa,#e7e9ec);
+    border-radius: 3px;
+    border: 1px #a2a6ac solid;
+  }
+  
+  .box-newusr a:hover {
+    background: #e7e9ec;
+  }
+
+  .new {
+    margin-top: 150px;
+  }
+  

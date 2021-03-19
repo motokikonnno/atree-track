@@ -1,0 +1,13 @@
+<%= form_with(model: @reaction, url: answer_reactions_path(@reaction.answer.id), local: true) do |form| %>
+  <div class="field">
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
+
+  <div class="content-form">
+    <%= form.text_area :body, class: "comment" %>
+  </div>
+
+  <div class="box-signup">
+    <%= form.submit "コメントする" %>
+  </div>
+<% end %>

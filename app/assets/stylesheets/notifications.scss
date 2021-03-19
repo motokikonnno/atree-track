@@ -1,0 +1,27 @@
+// Place all the styles related to the notifications controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.notification {
+    text-align: center;
+    border-bottom: 1px #ddd solid;
+}
+
+.notifications {
+    text-align: center;
+    margin-top: 60px;
+    border-bottom: 1px #ddd solid;
+    padding-bottom: 30px;
+}
+
+.back-mypage {
+    text-align: center;
+    margin-top: 400px;
+    margin-bottom: 50px;
+}
+
+.not-notification {
+    margin-top: 180px;
+    text-align: center;
+}

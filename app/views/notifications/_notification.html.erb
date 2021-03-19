@@ -1,0 +1,25 @@
+<% visitor = notification.visitor %>
+<% visited = notification.visited %>
+
+<div class="notification">
+    <div class="box-inner">
+    <p>
+    <%= link_to visitor.username, user_path(visitor) %>さんが
+    <% case notification.action %>
+        <% when 'answer' then %>
+            <%= link_to 'あなたの投稿', notification.post %>に回答しました
+        <% when 'like' then %>
+            <%= link_to 'あなたの投稿', notification.post %>にいいねしました
+        <% when 'reaction' then %>
+            <% if notification.post.user_id == visited.id %>
+                <%= link_to 'あなたの投稿', notification.post %>
+                <p>にコメントしました</p>
+            <% else %>
+                <%= link_to notification.post.user.username + 'さんの投稿', post_path(notification.post) %>
+                <p>にコメントしました</p>
+            <% end %>
+    <% end %>
+        <%= time_ago_in_words(notification.created_at).upcase %>前
+        </p>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<dl class="searchbox">
+  <%= search_form_for @q, url: posts_path do |f| %>
+    <dt><%= f.search_field :content_or_user_username_or_tags_name_cont %></dt>
+    <dd><%= f.submit "検索", class: 'search-btn' %></dd>
+  <% end %>
+</dl>
+
+<div class="answers">
+  <%= link_to(posts_answered_path) do %>
+    <button class="btn btn--orange btn--cubic btn--shadow">回答済み一覧へ</button>
+  <% end %>
+</div>
+
+<h1 class="posts">みんなの投稿</h1>
+
+<table>
+  <tr>
+    <th>種目</th>
+    <th>動画</th>
+    <th>コメント</th>
+    <th>投稿者</th>
+  </tr>
+
+  <div class="scroll-list jscroll">
+    <tr>
+      <% @posts.each do |post| %>
+      <% if post.best_answer_id == nil %>
+          <td class="icon"><% post.tags.each do |tag| %>
+            <%= tag.name %>
+          </td>
+          <% end %>
+          <td class="icon">
+              <%= link_to post.video_url.to_s do %>
+                <%= video_tag(post.video.to_s, :controls => true, :size => 15*10) %>
+              <% end %>
+          </td>
+          <td class="icon"><%= post.content %>
+            <p><%= time_ago_in_words(post.created_at) %>前</p>
+          </td>
+          <td class="icon"><%= link_to post.user.username, user_path(post.user) %>
+            <p><%= link_to '見てみる', post_path(post) %></p>
+          <div class="icon" id="post_<%= post.id %>">
+            <p><%= render partial: "likes/like", locals: {post: post} %></p>
+          </td>
+    </tr>
+      <% end %>
+  <% end %>
+</table>
+    <%= paginate @posts %>
+  </div>
+
+<div class="hoge">
+</div>
+
+
+

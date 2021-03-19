@@ -1,0 +1,27 @@
+// Place all the styles related to the Reactions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+    .comment {
+        width: 300px;
+        height: 300px;
+    }
+
+    .content-form {
+        margin-bottom: 50px;
+    }
+
+
+    .box-comment {
+        width: 350px;
+        height: 500px;
+        margin: 160px auto 20px;
+        border-radius: 4px;
+        border: 1px #ddd solid;
+    }
+
+    .back-show {
+        text-align: center;
+        margin-bottom: 30px;
+    }
